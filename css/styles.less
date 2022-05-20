@@ -1,0 +1,129 @@
+//Colors
+@primary: #02348d;
+@danger600: #dc2626;
+@danger50: #fef2f2;
+@success600: #16a34a;
+@success50: #f0fdf4;
+@font-face {
+  font-family: 'yekanbakh';
+  src: url('../font/YekanBakh-VF.ttf');
+  font-display: fallback;
+}
+.font{font-family: 'iransansxv', sans-serif}
+
+//Utilities
+.ltr{direction: ltr;}
+.uk-text-tiny{font-size: 12px;}
+.uk-text-zero{font-size: 0;}
+.font{font-family: 'yekanbakh', sans-serif;}
+.f100{font-variation-settings: "wght" 100;}
+.f200{font-variation-settings: "wght" 200;}
+.f300{font-variation-settings: "wght" 300;}
+.f400{font-variation-settings: "wght" 400;}
+.f500{font-variation-settings: "wght" 500;}
+.f600{font-variation-settings: "wght" 600;}
+.f700{font-variation-settings: "wght" 700;}
+.f800{font-variation-settings: "wght" 800;}
+.f900{font-variation-settings: "wght" 900;}
+.cursorPointer{cursor: pointer}
+// Mixins
+.border-radius (@radius: 5px) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+.transition (@transition: all .2s ease-out) {
+  transition: @transition;
+  -moz-transition: @transition;
+  -webkit-transition: @transition;
+}
+.transform (@transform) {
+  transform: @transform;
+  -moz-transform: @transform;
+  -webkit-transform: @transform;
+}
+.box-shadow (@shadow) {
+  box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  -webkit-box-shadow: @shadow;
+}
+
+//Utilities
+.ltr{direction: ltr;}
+
+main{
+  background: url("../img/bg.jpg") center center no-repeat;
+  background-size: cover;
+}
+.uk-background-white{background-color: #fff;}
+.uk-text-primary{color: @primary !important;;}
+
+.birthdate{
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 1; /* Firefox */
+    font-size: 12px;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 12px;
+  }
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    font-size: 12px;
+  }
+}
+.ui-datepicker{
+  background-color: #fff;
+  .border-radius(5px);
+  .box-shadow(0 2px 8px rgba(0, 0, 0, .08));
+  .transform(translateY(10px));
+  > div,
+  > table{
+    padding: 15px;
+  }
+  table{
+    &.ui-datepicker-calendar{
+      font-size: 0;
+      thead{
+        tr{
+          th{
+            color: #999;
+          }
+        }
+      }
+      th,td{
+        padding: 0;
+        span,a{
+          font-size: 14px;
+          padding: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 30px;
+          height: 30px;
+          .font;
+          .border-radius(5px);
+        }
+        a{
+          text-decoration: none;
+          color: #222;
+          &:hover{
+            background-color: #f0f0f0;
+          }
+        }
+        &.ui-datepicker-today{
+          a{
+            background-color: @primary;
+            color: #fff;
+            font-weight: 700;
+          }
+        }
+      }
+      .ui-state-disabled {
+        opacity: .3;
+        cursor: no-drop;
+      }
+    }
+  }
+}
+.people{
+  .transform(translateY(2px));
+}
